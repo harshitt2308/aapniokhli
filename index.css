@@ -1,0 +1,129 @@
+body {
+  background: linear-gradient(to right, #f9d423, #ff4e50);
+}
+
+
+
+
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+  
+  /* Then style the iframe to fit in the container div with full height and width */
+  .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+  }
+  .jumbotron {
+    background: url('https://images.unsplash.com/photo-1557053964-937650b63311?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGxvZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+  
+  @media (max-width: 767px) {
+    .jumbotron {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .jumbotron {
+      padding-top: 75px;
+      padding-bottom: 75px;
+    }
+  }
+  
+  .whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #fff;
+    background-color: #25d366;
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .whatsapp:hover {
+    background-color: #128c7e;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    transform: scale(1.1);
+  }
+  
+  .whatsapp i {
+    font-size: 20px;
+    aspect-ratio: 1/1;
+  }
+  
+  .whatsapp span {
+    margin-left: 10px;
+  }
+  
+  .container-fluid {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .embed-responsive::before {
+    display: block;
+    content: "";
+    padding-top: 56.25%;
+  }
+  
+  .embed-responsive .embed-responsive-item,
+  .embed-responsive iframe,
+  .embed-responsive embed,
+  .embed-responsive object,
+  .embed-responsive video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+  .btn-primary {
+    background-color: #f1c40f;
+    border-color: #f1c40f;
+  }
+  
+  .btn-primary:hover {
+    background-color: #d4af37;
+    border-color: #d4af37;
+  }
+  
+  .btn-primary:focus {
+    background-color: #d4af37;
+    border-color: #d4af37;
+    box-shadow: none;
+  }
+  
