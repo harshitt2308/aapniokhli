@@ -70,52 +70,9 @@
 }
 
 body {
-  animation: background-animation 10s infinite;
+  animation: background-animation 20s infinite;
   
 }
-
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  animation: gradient-bg 7s infinite;
-}
-
-@keyframes gradient-bg {
-  0% {
-    background: linear-gradient(45deg, #c68c53, #d2691e);
-    transform: rotate(0deg) scale(1) translateX(0px) skewX(0deg) perspective(0px);
-    opacity: 0.9;
-  }
-  25% {
-    background: linear-gradient(45deg, #d2691e, #8b0000);
-    transform: rotate(90deg) scale(1.5) translateX(50px) skewX(-30deg) perspective(500px);
-    opacity: 0.9;
-  }
-  50% {
-    background: linear-gradient(45deg, #8b0000, #c68c53);
-    transform: rotate(180deg) scale(1) translateX(0px) skewX(0deg) perspective(0px);
-    opacity: 0.9;
-  }
-  75% {
-    background: linear-gradient(45deg, #c68c53, #d2691e);
-    transform: rotate(270deg) scale(0.5) translateX(-50px) skewX(30deg) perspective(500px);
-    opacity: 0.9;
-  }
-  100% {
-    background: linear-gradient(45deg, #d2691e, #8b0000);
-    transform: rotate(360deg) scale(1) translateX(0px) skewX(0deg) perspective(0px);
-    opacity: 0.9;
-  }
-}
-
-
-
   
 
 @keyframes background-animation {
@@ -124,11 +81,11 @@ body::before {
     opacity: 0.9;
   }
   25% {
-    background: linear-gradient(45deg, #d2691e, #8b0000);
+    background: linear-gradient(45deg, #d2691e, #d44e4e);
     opacity: 0.9;
   }
   50% {
-    background: linear-gradient(45deg, #8b0000, #c68c53);
+    background: linear-gradient(45deg, #e84141, #c68c53);
     opacity: 0.9;
   }
   75% {
@@ -136,11 +93,13 @@ body::before {
     opacity: 0.9;
   }
   100% {
-    background: linear-gradient(45deg, #d2691e, #8b0000);
+    background: linear-gradient(45deg, #d2691e, #e34444);
 
     opacity: 0.9;
   }
 }
+
+
 
 
 
