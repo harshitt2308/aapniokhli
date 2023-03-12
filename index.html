@@ -16,6 +16,15 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(window).scroll(function() {
+          var scrollTop = $(this).scrollTop();
+          $('.parallax-bg').css('transform', 'translate3d(0, ' + scrollTop / 4 + 'px, 0)');
+        });
+      });
+    </script>
     <style>
         .bg-image {
   background-image: url("https://source.unsplash.com/random/1920x1080");
@@ -60,29 +69,82 @@
   border-radius: 0;
 }
 
-        .color1{
-            background: linear-gradient(to bottom, #43C6AC 0%, #191654 100%);
-        }
-        .color2{
-            background: linear-gradient(to bottom, #43C6AC 0%, #F8FFAE 100%);
+body {
+  animation: background-animation 10s infinite;
+  
+}
 
-        }
-        .color3{
-            background: linear-gradient(to bottom, #093028 0%, #237A57 100%);
-        }
-        .color4{
-            background: linear-gradient(to bottom, #33ccff 0%, #4568DC 100%);
-        }
-        
-        .asdfg{
-            width: auto;
-            height: auto;
-        }
-        body {
-			margin: 0;
-			padding: 0;
-			background: linear-gradient(to bottom right, #ff6600, #ff9933, #ffcc66);
-		}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: gradient-bg 7s infinite;
+}
+
+@keyframes gradient-bg {
+  0% {
+    background: linear-gradient(45deg, #c68c53, #d2691e);
+    transform: rotate(0deg) scale(1) translateX(0px) skewX(0deg) perspective(0px);
+    opacity: 0.9;
+  }
+  25% {
+    background: linear-gradient(45deg, #d2691e, #8b0000);
+    transform: rotate(90deg) scale(1.5) translateX(50px) skewX(-30deg) perspective(500px);
+    opacity: 0.9;
+  }
+  50% {
+    background: linear-gradient(45deg, #8b0000, #c68c53);
+    transform: rotate(180deg) scale(1) translateX(0px) skewX(0deg) perspective(0px);
+    opacity: 0.9;
+  }
+  75% {
+    background: linear-gradient(45deg, #c68c53, #d2691e);
+    transform: rotate(270deg) scale(0.5) translateX(-50px) skewX(30deg) perspective(500px);
+    opacity: 0.9;
+  }
+  100% {
+    background: linear-gradient(45deg, #d2691e, #8b0000);
+    transform: rotate(360deg) scale(1) translateX(0px) skewX(0deg) perspective(0px);
+    opacity: 0.9;
+  }
+}
+
+
+
+  
+
+@keyframes background-animation {
+  0% {
+    background: linear-gradient(45deg, #c68c53, #d2691e);
+    opacity: 0.9;
+  }
+  25% {
+    background: linear-gradient(45deg, #d2691e, #8b0000);
+    opacity: 0.9;
+  }
+  50% {
+    background: linear-gradient(45deg, #8b0000, #c68c53);
+    opacity: 0.9;
+  }
+  75% {
+    background: linear-gradient(45deg, #c68c53, #d2691e);
+    opacity: 0.9;
+  }
+  100% {
+    background: linear-gradient(45deg, #d2691e, #8b0000);
+
+    opacity: 0.9;
+  }
+}
+
+
+
+
         .carousel .carousel-item {
         height: 500px;
         }
@@ -369,7 +431,7 @@ max-height: 300px;
   }
 
     
-	    
+
 
         
     </style>
@@ -377,6 +439,9 @@ max-height: 300px;
 </head>
 
 <body>
+  
+
+  
     
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <a class="navbar-logo" href="" style="margin-right: 10px">
@@ -407,6 +472,8 @@ max-height: 300px;
 
     <header>
         <div class="container-fluid hero1" id="home">
+          
+          
             <div class="row ">
               <div class="col-md-12">
                 <div class="bg-image">
@@ -426,7 +493,7 @@ max-height: 300px;
 
     <div class="container hero2">
         <div class="row align-items-center">
-            <div class="col-md-2 text-center">
+            <div class="d-none d-sm-block col-md-2 text-center">
                 <img src="logo.jpeg" alt="Your logo left" class="img-fluid" style="opacity: 0.7 ; transition: opacity 0.5s ease-in-out" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">
             </div>
             <div class="col-lg-6 mx-auto">
@@ -436,7 +503,7 @@ max-height: 300px;
                 </div>
                 </div>
             </div>
-            <div class="col-md-2 text-center">
+            <div class="d-none d-sm-block col-md-2 text-center">
                 <img src="logo.jpeg  " alt="Your logo right" class="img-fluid" style="opacity: 0.7 ; transition: opacity 0.5s ease-in-out" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">
             </div>
         </div>
@@ -530,7 +597,7 @@ max-height: 300px;
         </a>
       </div>
       
-    
+
 </body>
 
 </html>
